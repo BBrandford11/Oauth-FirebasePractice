@@ -5,7 +5,11 @@ import { useState } from "react";
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [email, setEmail] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+
+  const handleSubmit = () => {
+    console.log("tooo");
+  };
 
   return (
     <Box
@@ -20,7 +24,7 @@ function SignUp() {
         onChange={(e) => setEmail(e.target.value)}
         fullWidth
       ></TextField>
-       <TextField
+      <TextField
         variant="outlined"
         type="password"
         label="Enter Password"
@@ -28,13 +32,26 @@ function SignUp() {
         onChange={(e) => setPassword(e.target.value)}
         fullWidth
       ></TextField>
-                  <Button
-              variant="contained"
-              size="large"
-              style={{ backgroundColor: "#EEBC1D", marginLeft:"90px", marginTop: "20px" }}
-            >
-              Sign up
-            </Button>
+            <TextField
+        variant="outlined"
+        type="confirmPassword"
+        label="Confirm Password"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+        fullWidth
+      ></TextField>
+      <Button
+        variant="contained"
+        size="large"
+        style={{
+          backgroundColor: "#EEBC1D",
+          marginLeft: "90px",
+          marginTop: "20px",
+        }}
+        onClick={handleSubmit}
+      >
+        Sign up
+      </Button>
     </Box>
   );
 }
