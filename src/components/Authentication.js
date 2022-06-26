@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import "./Auth.css"
+import "./Auth.css";
 import { AppBar, Tab, Tabs } from "@mui/material";
 import Login from "./Login";
 import SignUp from "./SignUp";
@@ -86,10 +86,7 @@ export default function Auth() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <AppBar
-          position="static"
-          style={style}
-        >
+        <AppBar position="static" style={style}>
           <Box sx={{ width: "100%" }}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
               <Tabs
@@ -102,11 +99,12 @@ export default function Auth() {
               </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-              <Login/>
+              <Login />
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <SignUp/>
+              <SignUp />
             </TabPanel>
+
           </Box>
         </AppBar>
       </Modal>
