@@ -48,12 +48,12 @@ function TabPanel(props) {
 //   value: PropTypes.number.isRequired,
 // };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
+// function a11yProps(index) {
+//   return {
+//     id: `simple-tab-${index}`,
+//     "aria-controls": `simple-tabpanel-${index}`,
+//   };
+// }
 
 export default function Auth() {
   const [open, setOpen] = React.useState(false);
@@ -104,7 +104,6 @@ export default function Auth() {
             <TabPanel value={value} index={1}>
               <SignUp />
             </TabPanel>
-
           </Box>
         </AppBar>
       </Modal>
