@@ -24,30 +24,30 @@ const style = {
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
+  
   return (
     <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
+    role="tabpanel"
+    hidden={value !== index}
+    id={`simple-tabpanel-${index}`}
+    aria-labelledby={`simple-tab-${index}`}
+    {...other}
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <Typography  >{children}</Typography>
         </Box>
       )}
     </div>
   );
 }
 
+
 // TabPanel.propTypes = {
 //   children: PropTypes.node,
 //   index: PropTypes.number.isRequired,
 //   value: PropTypes.number.isRequired,
 // };
-
 // function a11yProps(index) {
 //   return {
 //     id: `simple-tab-${index}`,
@@ -66,6 +66,8 @@ export default function Auth() {
     setValue(newValue);
   };
 
+
+
   return (
     <div>
       <Button
@@ -80,33 +82,35 @@ export default function Auth() {
       >
         Log in
       </Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <AppBar position="static" style={style}>
-          <Box sx={{ width: "100%" }}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                aria-label="basic tabs example"
-              >
-                <Tab label="Login" />
-                <Tab label="Sign Up" />
-              </Tabs>
+      <>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <AppBar position="static" style={style}>
+            <Box sx={{ width: "100%" }}>
+              <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                <Tabs
+                  value={value}
+                  onChange={handleChange}
+                  aria-label="basic tabs example"
+                >
+                  <Tab label="Login" />
+                  <Tab label="Sign Up" />
+                </Tabs>
+              </Box>
+              <TabPanel value={value} index={0}>
+                <Login />
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+                <SignUp />
+              </TabPanel>
             </Box>
-            <TabPanel value={value} index={0}>
-              <Login />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              <SignUp />
-            </TabPanel>
-          </Box>
-        </AppBar>
-      </Modal>
+          </AppBar>
+        </Modal>
+      </>
     </div>
   );
 }

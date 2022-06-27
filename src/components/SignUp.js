@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { Box, flexbox } from "@mui/system";
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword ,  onAuthStateChanged} from "firebase/auth";
 import { auth } from "../firebase/firebase-config";
 
 // import { async } from "q";
@@ -21,54 +21,59 @@ function SignUp() {
       console.log(error, "error");
     }
   };
+  const mapp = document.querySelectorAll("p > div")
 
-  const margin = {marginbottom:"5px"}
+  console.log(mapp, "mapp")
+
+  const margin = { marginbottom: "5px" };
 
   return (
-    <Box
-      p={3}
-      style={{ display: flexbox, flexDirection: "column", gap: "20px" }}
-    >
-      <TextField
-        className={margin}
-        variant="outlined"
-        type="email"
-        label="Enter Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        fullWidth
-      ></TextField>
-      <TextField
-        style={{marginBottom:"20px", marginTop:"20px"}}
-        variant="outlined"
-        type="password"
-        label="Enter Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        fullWidth
-      ></TextField>
-      <TextField
-            className={margin}
-        variant="outlined"
-        type="password"
-        label="Confirm Password"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        fullWidth
-      ></TextField>
-      <Button
-        variant="contained"
-        size="large"
-        style={{
-          backgroundColor: "#EEBC1D",
-          marginLeft: "90px",
-          marginTop: "20px",
-        }}
-        onClick={handleSubmit}
+    <div>
+      <Box
+        p={3}
+        style={{ display: flexbox, flexDirection: "column", gap: "20px" }}
       >
-        Sign up
-      </Button>
-    </Box>
+        <TextField
+          className={margin}
+          variant="outlined"
+          type="email"
+          label="Enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          fullWidth
+        ></TextField>
+        <TextField
+          style={{ marginBottom: "20px", marginTop: "20px" }}
+          variant="outlined"
+          type="password"
+          label="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          fullWidth
+        ></TextField>
+        <TextField
+          className={margin}
+          variant="outlined"
+          type="password"
+          label="Confirm Password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          fullWidth
+        ></TextField>
+        <Button
+          variant="contained"
+          size="large"
+          style={{
+            backgroundColor: "#EEBC1D",
+            marginLeft: "90px",
+            marginTop: "20px",
+          }}
+          onClick={handleSubmit}
+        >
+          Sign up
+        </Button>
+      </Box>
+    </div>
   );
 }
 
