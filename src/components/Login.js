@@ -18,9 +18,7 @@ function Login() {
     }
   };
 
-  const mapp = document.querySelectorAll("p > div");
 
-  console.log(mapp, "mapp login");
 
   return (
     <div>

@@ -21,9 +21,7 @@ function SignUp() {
       console.log(error, "error");
     }
   };
-  const mapp = document.querySelectorAll("p > div")
 
-  console.log(mapp, "mapp")
 
   const margin = { marginbottom: "5px" };
 
