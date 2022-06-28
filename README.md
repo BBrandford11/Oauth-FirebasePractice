@@ -13,6 +13,6 @@ I used this project to practice user authentication with Firebase database. It i
 screenshot of the sign up page including Google login.
 !["screenshot of new product added to database"](https://github.com/BBrandford11/Oauth-FirebasePractice/blob/master/public/photos/sign%20up.png?raw=true)
 screenshot of sign in.
-!["screenshot of creating main page showing new product creation."](https://github.com/BBrandford11/Oauth-FirebasePractice/blob/master/public/photos/sign%20up.png?raw=true)
+!["screenshot of creating main page showing new product creation."](https://github.com/BBrandford11/Oauth-FirebasePractice/blob/master/public/photos/sign%20in.png?raw=true)
 
 
