@@ -1,9 +1,12 @@
 import { Button, TextField } from "@mui/material";
 import { Box, flexbox } from "@mui/system";
 import { useState } from "react";
-import { createUserWithEmailAndPassword ,  onAuthStateChanged} from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { auth } from "../firebase/firebase-config";
-
+import GoogleButton from "react-google-button";
 // import { async } from "q";
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -21,7 +24,6 @@ function SignUp() {
       console.log(error, "error");
     }
   };
-
 
   const margin = { marginbottom: "5px" };
 
@@ -70,6 +72,12 @@ function SignUp() {
         >
           Sign up
         </Button>
+        <GoogleButton
+        style={{marginTop: "10px"}}
+          onClick={() => {
+            console.log("Google button clicked");
+          }}
+        />
       </Box>
     </div>
   );
